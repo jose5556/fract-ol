@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   inicialization.c                                   :+:      :+:    :+:   */
+/*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/13 12:35:39 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/08/13 16:11:07 by joseoliv         ###   ########.fr       */
+/*   Created: 2024/08/13 15:38:03 by joseoliv          #+#    #+#             */
+/*   Updated: 2024/08/13 16:10:50 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fractol.h"
+#ifndef FRACTOL_H
+# define FRACTOL_H
 
-int	main(void)
-{
-	void	*mlx;
-	void	*mlx_win;
+# include "../libs/minilibx-linux/mlx.h"
+# include "../libs/minilibx-linux/mlx_int.h"
+# include "../libs/libft/libft.h"
 
-	mlx = mlx_init();
-	mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
-	if (mlx_win == NULL)
-		return (1);
-	mlx_loop(mlx);
-}
+#endif
