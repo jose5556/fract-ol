@@ -1,20 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/13 15:38:03 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/09/02 17:38:19 by joseoliv         ###   ########.fr       */
+/*   Created: 2024/04/14 16:38:22 by joseoliv          #+#    #+#             */
+/*   Updated: 2024/04/22 19:26:03 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRACTOL_H
-# define FRACTOL_H
+#include "libft.h"
 
-# include "../libs/minilibx-linux/mlx.h"
-# include "../libs/libft/libft.h"
-#include <unistd.h>
+char	*ft_strnstr(const char *big, const char *little, size_t len)
+{
+	size_t	i;
 
-#endif
+	i = ft_strlen(little);
+	if (!*little)
+		return ((char *)big);
+	while (*big && len > 0)
+	{
+		if (!(ft_strncmp(big, little, i)) && len >= i)
+			return ((char *)big);
+		big++;
+		len--;
+	}
+	return (NULL);
+}
+
+/* int	main(void)
+{
+	printf("%s", ft_strnstr("dfgdfgabcddddd", "abcd", 13));
+} */

@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: joseoliv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/13 15:38:03 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/09/02 17:38:19 by joseoliv         ###   ########.fr       */
+/*   Created: 2024/04/14 16:29:07 by joseoliv          #+#    #+#             */
+/*   Updated: 2024/04/14 16:29:12 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRACTOL_H
-# define FRACTOL_H
+#include "libft.h"
 
-# include "../libs/minilibx-linux/mlx.h"
-# include "../libs/libft/libft.h"
-#include <unistd.h>
+void	ft_bzero(void *s, size_t n)
+{
+	ft_memset(s, '\0', n);
+}
 
-#endif
+/* int	main(void)
+{
+	char	s[4] = "era";
+	//ft_bzero(s, 2);
+	bzero(s, 1);
+	printf("%s\n", s);
+	return (0);
+} */

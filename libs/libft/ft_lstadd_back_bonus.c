@@ -1,20 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/13 15:38:03 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/09/02 17:38:19 by joseoliv         ###   ########.fr       */
+/*   Created: 2024/04/21 18:27:34 by joseoliv          #+#    #+#             */
+/*   Updated: 2024/04/26 22:27:04 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRACTOL_H
-# define FRACTOL_H
+#include "libft.h"
 
-# include "../libs/minilibx-linux/mlx.h"
-# include "../libs/libft/libft.h"
-#include <unistd.h>
+void	ft_lstadd_back(t_list **lst, t_list *new)
+{
+	t_list	*temporary;
 
-#endif
+	if (!(*lst))
+		*lst = new;
+	else
+	{
+		temporary = ft_lstlast(*lst);
+		temporary->next = new;
+	}
+}
+
+/* int	main(void)
+{
+	t_list	*list;
+	t_list	*result;
+
+	list = NULL;
+	//list = ft_lstnew("era");
+	ft_lstadd_back(&list, ft_lstnew("new"));
+	result = ft_lstlast(list);
+	printf("%s", (char *)result->content);
+}
+ */

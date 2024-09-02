@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/13 15:38:03 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/09/02 17:38:19 by joseoliv         ###   ########.fr       */
+/*   Created: 2024/04/14 16:32:27 by joseoliv          #+#    #+#             */
+/*   Updated: 2024/04/19 14:18:20 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRACTOL_H
-# define FRACTOL_H
+#include "libft.h"
 
-# include "../libs/minilibx-linux/mlx.h"
-# include "../libs/libft/libft.h"
-#include <unistd.h>
+char	*ft_strdup(const char *s)
+{
+	char	*new_string;
+	int		len;
 
-#endif
+	len = ft_strlen(s);
+	new_string = (char *) malloc (len * (sizeof(char)) + 1);
+	if (new_string == NULL)
+		return (new_string);
+	ft_strlcpy(new_string, s, len + 1);
+	return (new_string);
+}
+
+/* int	main(void)
+{
+	const	char	str[] = "fdfjkdf\n35346";
+	printf("%s", ft_strdup(str));
+} */
