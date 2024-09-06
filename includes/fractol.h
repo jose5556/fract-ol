@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 15:38:03 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/09/06 22:17:23 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/09/06 22:32:22 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,6 @@
 # include <X11/X.h>
 # include <unistd.h>
 
-enum {
-	ON_KEYDOWN = 2,
-	ON_KEYUP = 3,
-	ON_MOUSEDOWN = 4,
-	ON_MOUSEUP = 5,
-	ON_MOUSEMOVE = 6,
-	ON_EXPOSE = 12,
-	ON_DESTROY = 17
-};
 enum {
 	RED = 0x00FF0000,
 	GREEN = 0x0000FF00,
@@ -51,5 +42,6 @@ typedef struct	s_data {
 
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
 int		close_program(int keycode, t_data *data);
+int		handle_close(t_data *data);
 
 #endif
