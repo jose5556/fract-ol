@@ -6,11 +6,11 @@
 #    By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/28 15:24:17 by joseoliv          #+#    #+#              #
-#    Updated: 2024/09/02 17:50:11 by joseoliv         ###   ########.fr        #
+#    Updated: 2024/09/06 20:13:29 by joseoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = cc
+CC = cc -g
 CFLAGS = -Wall -Wextra -Werror -Iincludes
 MINILIBX_DIR = libs/minilibx-linux
 MINILIBX = $(MINILIBX_DIR)/libmlx.a
