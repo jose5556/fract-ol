@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 15:38:03 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/09/06 21:06:13 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/09/06 22:17:23 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "../libs/minilibx-linux/mlx.h"
 # include "../libs/libft/libft.h"
 # include <X11/keysym.h>
+# include <X11/X.h>
 # include <unistd.h>
 
 enum {
@@ -49,6 +50,6 @@ typedef struct	s_data {
 }  t_data;
 
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
-int	close_program(int keycode, t_data *data);
+int		close_program(int keycode, t_data *data);
 
 #endif

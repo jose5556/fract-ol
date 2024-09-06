@@ -6,11 +6,11 @@
 #    By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/28 15:24:17 by joseoliv          #+#    #+#              #
-#    Updated: 2024/09/06 20:13:29 by joseoliv         ###   ########.fr        #
+#    Updated: 2024/09/06 22:19:00 by joseoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = cc -g
+CC = cc
 CFLAGS = -Wall -Wextra -Werror -Iincludes
 MINILIBX_DIR = libs/minilibx-linux
 MINILIBX = $(MINILIBX_DIR)/libmlx.a
@@ -43,11 +43,9 @@ $(MINILIBX):
 clean:
 	rm -f $(OBJS)
 	make clean -C $(LIBFT_DIR)
-	make clean -C $(FT_PRINTF_DIR)
 
 fclean: clean
 	rm -f $(NAME)
 	make fclean -C $(LIBFT_DIR)
-	make fclean -C $(FT_PRINTF_DIR)
 
 re: fclean all
