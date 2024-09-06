@@ -6,7 +6,7 @@
 #    By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/28 15:24:17 by joseoliv          #+#    #+#              #
-#    Updated: 2024/09/06 22:19:00 by joseoliv         ###   ########.fr        #
+#    Updated: 2024/09/06 22:38:18 by joseoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,23 +29,23 @@ NAME = process
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT) $(MINILIBX)
-	$(CC) -o $@ $(OBJS) $(LDFLAGS)
+	@$(CC) -o $@ $(OBJS) $(LDFLAGS)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(LIBFT):
-	make -C $(LIBFT_DIR) -s
+	@make -C $(LIBFT_DIR) -s
 
 $(MINILIBX):
-	make -C $(MINILIBX_DIR)
+	@make -C $(MINILIBX_DIR) -s
 
 clean:
-	rm -f $(OBJS)
-	make clean -C $(LIBFT_DIR)
+	@rm -f $(OBJS)
+	@make clean -C $(LIBFT_DIR) -s
 
 fclean: clean
-	rm -f $(NAME)
-	make fclean -C $(LIBFT_DIR)
+	@rm -f $(NAME)
+	@make fclean -C $(LIBFT_DIR) -s
 
 re: fclean all
