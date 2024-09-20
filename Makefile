@@ -6,7 +6,7 @@
 #    By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/28 15:24:17 by joseoliv          #+#    #+#              #
-#    Updated: 2024/09/06 22:38:18 by joseoliv         ###   ########.fr        #
+#    Updated: 2024/09/20 07:02:25 by joseoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ FT_PRINTF_DIR = libs/ft_printf
 FT_PRINTF = $(FT_PRINTF_DIR)/libftprintf.a
 
 LDFLAGS = $(LIBFT) $(MINILIBX) -lX11 -lXext
-SRCS = src/start.c
+SRCS = src/main.c
 OBJS = $(SRCS:.c=.o)
 NAME = process
 
