@@ -6,13 +6,13 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 07:47:35 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/09/21 11:13:19 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/09/21 11:25:34 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-void	fractal_render(int x, int y)
+void	handel_pixel(int x, int y)
 {
 	t_complex   a;
     t_complex   b;
@@ -34,7 +34,7 @@ void	fractal_render(int x, int y)
 	}
 }
 
-void	render_pixel(t_complex complex)
+void	render_window(t_complex complex)
 {
 	int	x;
 	int	y;
@@ -45,7 +45,7 @@ void	render_pixel(t_complex complex)
 	{
 		while (y <= WIDTH)
 		{
-			fractal_render(x, y);
+			handel_pixel(x, y);
 			y++;
 		}
 		x++;
