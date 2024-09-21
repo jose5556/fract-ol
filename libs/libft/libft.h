@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 16:57:20 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/09/02 17:32:26 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/09/21 08:00:50 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,13 @@ int		count(long long n, int base);
 int		ft_putptr_hexa(unsigned long long n);
 int		ft_unsigned_putnbr(unsigned int n);
 int		count_unsigned(unsigned long long n);
-
+typedef struct s_interpolation_vars
+{
+	void	*unscalednum;
+	void	*minallowed;
+	void	*maxallowed;
+	void	*min;
+	void	*max;
+}	t_interpolation_vars;
+void	*linear_interpolation(t_interpolation_vars *vars);
 #endif
