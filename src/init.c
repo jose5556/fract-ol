@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 07:10:11 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/09/20 08:15:22 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/09/21 07:47:20 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,3 @@ void    fractal_init(t_data *data)
 	data->imgs.addr = mlx_get_data_addr(data->imgs.img, &data->imgs.bits_per_pixel,
 			&data->imgs.line_length, &data->imgs.endian);
 }
-
