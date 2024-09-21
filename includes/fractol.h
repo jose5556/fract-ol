@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 15:38:03 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/09/20 08:17:22 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/09/21 10:35:53 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,27 +29,31 @@ enum {
 	GREEN = 0x0000FF00,
 	BLUE = 0x000000FF,
 };
-typedef struct	s_vars_mlx {
+typedef struct	s_vars_mlx 
+{
 	void	*mlx;
 	void	*win;
 	char	*name;
 }	t_vars_mlx;
-typedef struct	s_img {
+typedef struct	s_img 
+{
 	void	*img;
 	char	*addr;
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
 }	t_img;
-typedef struct	s_data {
+typedef struct	s_data 
+{
 	t_vars_mlx	vars;
 	t_img		imgs;
 }  t_data;
-typedef struct s_complex {
+typedef struct s_complex 
+{
 	double	x;
 	double	y;
 }	t_complex;
-
+double	linear_interpolation(int minAllowed, int maxAllowed, int unscaledNum, int max) ;
 void    fractal_init(t_data *data);
 
 #endif
