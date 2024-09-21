@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 15:38:03 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/09/21 10:35:53 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/09/21 11:26:11 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,8 @@ typedef struct s_complex
 }	t_complex;
 double	linear_interpolation(int minAllowed, int maxAllowed, int unscaledNum, int max) ;
 void    fractal_init(t_data *data);
+void	handel_pixel(int x, int y);
+void	render_window(t_complex complex);
+void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
 
 #endif
