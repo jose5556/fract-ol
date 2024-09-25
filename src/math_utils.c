@@ -6,25 +6,33 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 08:13:15 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/09/21 10:38:38 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/09/25 11:15:02 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-double	linear_interpolation(int minAllowed, int maxAllowed, int unscaledNum, int max) 
+double	linear_interpolation(double minAllowed, double maxAllowed, double unscaledNum, double max) 
 {
   return (maxAllowed - minAllowed) 
   		* (unscaledNum - 0) / (max - 0) 
 		+ minAllowed;
 }
 
-int	main(void)
+t_complex   sum_complex(t_complex z1, t_complex z2)
 {
-	int	i = -1;
+    t_complex   result;
 
-	while (++i <= 800)
-	{
-		printf("%d -> %f\n", linear_interpolation(-2, 2, i, HEIGHT));
-	}
+    result.x = z1.x + z2.x;
+    result.y = z1.y + z2.y;
+    return result;
+}
+
+t_complex   square_complex(t_complex z)
+{
+    t_complex   result;
+    
+    result.x = (z.x * z.x) - (z.y * z.y);
+    result.y = 2 * z.x * z.y;
+    return result;
 }
