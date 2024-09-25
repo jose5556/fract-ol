@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 15:38:03 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/09/25 11:38:12 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/09/25 13:36:06 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,8 @@ void		my_mlx_pixel_put(t_img *vars, int x, int y, int color);
 void		data_init(t_fractal *fractal);
 t_complex   sum_complex(t_complex z1, t_complex z2);
 t_complex   square_complex(t_complex z);
+void		handle_hooks(t_data *data);
+int			close_program(int keycode, t_data *data);
+int			handle_close(t_data *data);
 
 #endif
