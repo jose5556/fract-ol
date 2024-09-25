@@ -6,57 +6,57 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 07:47:35 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/09/21 11:25:34 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/09/25 11:36:49 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-void	handel_pixel(int x, int y)
+void	handel_pixel(int x, int y, t_data *data)
 {
 	t_complex   a;
     t_complex   b;
-    double      temp;
+	int			i;
+	int			color;
 
+	i = -1;
 	a.x = 0;
     a.y = 0;
 	b.x = linear_interpolation(-2, 2, x, WIDTH);
 	b.y = linear_interpolation(2, -2, y, HEIGHT);
-
-	while(1)
+	while(++i < data->fractal.fractal_iterations)
 	{
-		temp = (a.x * a.x) - (a.y * a.y);
-        a.y = 2 * a.x * a.y;
-        a.x = temp;
-        
-        a.x += b.x;
-        a.y += b.y;
+		a = sum_complex(square_complex(a), b);
+		if ((a.x * a.x) + (a.y * a.y) > data->fractal.hypotenuse)
+		{
+			color = linear_interpolation(BLACK, WHITE, i, data->fractal.fractal_iterations);
+			my_mlx_pixel_put(&data->img, x, y, color);
+			return ;
+		}
 	}
+	my_mlx_pixel_put(&data->img, x, y, PSYCHEDELIC_PURPLE);
 }
 
-void	render_window(t_complex complex)
+void	render_fractal(t_data *data)
 {
 	int	x;
 	int	y;
 
-	x = 0;
-	y = 0;
-	while (x <= HEIGHT)
+	y = -1;
+	while (++y <= HEIGHT)
 	{
-		while (y <= WIDTH)
-		{
-			handel_pixel(x, y);
-			y++;
-		}
-		x++;
+		x = -1;
+		while (++x <= WIDTH)
+			handel_pixel(x, y, data);
 	}
+	mlx_put_image_to_window(data->mlx, data->win, data->img.img, 0, 0);
 }
 
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
+void	my_mlx_pixel_put(t_img *vars, int x, int y, int color)
 {
 	char	*dst;
 
-	dst = data->imgs.addr + (y * data->imgs.line_length + x
-			* (data->imgs.bits_per_pixel / 8));
+	dst = vars->addr + (y * vars->line_length + x
+			* (vars->bits_per_pixel / 8));
 	*(unsigned int *)dst = color;
 }
