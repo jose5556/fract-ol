@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 06:41:55 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/09/25 11:37:40 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/09/25 13:56:04 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ int main(int argc, char *argv[])
 		data.name = argv[1];
 		fractal_init(&data);
         render_fractal(&data);
-        mlx_loop(data.mlx);		
+		handle_hooks(&data);
+        mlx_loop(data.mlx);
+		mlx_loop_hook(data.mlx, render_fractal, &data);
 	}
 	else
 	{
