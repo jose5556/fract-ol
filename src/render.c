@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 07:47:35 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/09/25 11:36:49 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/09/27 13:00:33 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ void	handel_pixel(int x, int y, t_data *data)
 	i = -1;
 	a.x = 0;
     a.y = 0;
-	b.x = linear_interpolation(-2, 2, x, WIDTH);
-	b.y = linear_interpolation(2, -2, y, HEIGHT);
+	b.x = linear_interpolation(-2, 2, x, WIDTH) + data->fractal.shift_x;
+	b.y = linear_interpolation(2, -2, y, HEIGHT) + data->fractal.shift_y;
 	while(++i < data->fractal.fractal_iterations)
 	{
 		a = sum_complex(square_complex(a), b);
