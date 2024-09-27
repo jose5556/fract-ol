@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 11:54:18 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/09/27 16:59:11 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/09/27 17:17:26 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,7 @@ int	handle_mouse(int button, int x, int y, t_data *data)
 		data->fractal.fractal_iterations += 2;
 	}
 	else if (button == 5)
-	{
 		data->fractal.zoom *= 1.05;
-		//data->fractal.fractal_iterations -= 2;
-	}
 	render_fractal(data);
 }
 
