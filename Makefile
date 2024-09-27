@@ -6,12 +6,12 @@
 #    By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/28 15:24:17 by joseoliv          #+#    #+#              #
-#    Updated: 2024/09/25 12:08:19 by joseoliv         ###   ########.fr        #
+#    Updated: 2024/09/27 16:23:22 by joseoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc -g
-CFLAGS = -Wall -Wextra -Werror -Iincludes
+
 MINILIBX_DIR = libs/minilibx-linux
 MINILIBX = $(MINILIBX_DIR)/libmlx.a
 
@@ -21,7 +21,7 @@ LIBFT = $(LIBFT_DIR)/libft.a
 FT_PRINTF_DIR = libs/ft_printf
 FT_PRINTF = $(FT_PRINTF_DIR)/libftprintf.a
 
-LDFLAGS = $(LIBFT) $(MINILIBX) -lX11 -lXext
+LDFLAGS = $(LIBFT) $(MINILIBX) -lX11 -lXext -lm
 SRCS = src/main.c src/init.c src/render.c src/math_utils.c src/hooks.c
 OBJS = $(SRCS:.c=.o)
 NAME = process
