@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 15:38:03 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/09/27 17:01:21 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/09/27 17:16:43 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,6 @@ double		linear_interpolation(double minAllowed, double maxAllowed, double unscal
 void    	fractal_init(t_data *data);
 void		handel_pixel(int x, int y, t_data *data);
 void		render_fractal(t_data *data);
-void		my_mlx_pixel_put(t_img *vars, int x, int y, int color);
-void		data_init(t_fractal *fractal);
 t_complex   sum_complex(t_complex z1, t_complex z2);
 t_complex   square_complex(t_complex z);
 int			hooks_listener(t_data *data);
