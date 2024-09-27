@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 07:10:11 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/09/25 13:29:32 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/09/27 12:59:28 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 void	data_init(t_fractal *fractal)
 {
 	fractal->hypotenuse = 4;
-	fractal->fractal_iterations = 100;
+	fractal->fractal_iterations = 1000;
+	fractal->shift_x = 0.0;
+	fractal->shift_y = 0.0;
 }
 
 void    fractal_init(t_data *data)
