@@ -6,13 +6,13 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 07:10:11 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/09/27 16:51:45 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/09/27 17:16:19 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-void	data_init(t_fractal *fractal)
+static void	data_init(t_fractal *fractal)
 {
 	fractal->hypotenuse = 4;
 	fractal->fractal_iterations = 100;
