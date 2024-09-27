@@ -6,13 +6,13 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 07:47:35 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/09/27 17:12:23 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/09/27 17:16:03 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-int smooth_color_interpolation(int color1, int color2, int i, int max_iterations)
+static int  smooth_color_interpolation(int color1, int color2, int i, int max_iterations)
 {
     double  t;
     
@@ -65,7 +65,7 @@ void	render_fractal(t_data *data)
 	mlx_put_image_to_window(data->mlx, data->win, data->img.img, 0, 0);
 }
 
-void	my_mlx_pixel_put(t_img *vars, int x, int y, int color)
+static void	my_mlx_pixel_put(t_img *vars, int x, int y, int color)
 {
 	char	*dst;
 
