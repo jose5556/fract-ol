@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 11:54:18 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/09/27 17:17:26 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/03 17:53:01 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,19 @@
 
 int	hooks_listener(t_data *data)
 {
-	mlx_hook(data->win, KeyPress, KeyPressMask, 
+	mlx_hook(data->win, KeyPress, KeyPressMask,
 		handle_keys, data);
-	mlx_hook(data->win, DestroyNotify, NoEventMask, 
+	mlx_hook(data->win, KeyRelease, KeyReleaseMask,
+		handle_colors, data);
+	mlx_hook(data->win, DestroyNotify, NoEventMask,
 		close_program, data);
 	mlx_hook(data->win, ButtonPress, ButtonPressMask,
 		handle_mouse, data);
+	mlx_hook(data->win, MotionNotify, PointerMotionMask,
+		handle_mouse, data);
 	return (0);
 }
- 
+
 int	handle_keys(int keycode, t_data *data)
 {
 	if (keycode == XK_Escape)
@@ -35,11 +39,46 @@ int	handle_keys(int keycode, t_data *data)
 		data->fractal.shift_y += (0.2 * data->fractal.zoom);
 	if (keycode == XK_Down)
 		data->fractal.shift_y -= (0.2 * data->fractal.zoom);
- 	if (keycode == XK_plus)
+	if (keycode == XK_KP_Add)
 		data->fractal.fractal_iterations += 5;
+	if (keycode == XK_KP_Subtract)
+		data->fractal.fractal_iterations -= 5;
+	if (keycode == XK_space)
+	{
+		if (data->fractal.lst.next != NULL)
+			data->fractal.lst = *(data->fractal.lst.next);
+		else
+			populate_color_lst(&data->fractal);
+	}
+	return (0);
+}
+
+int	handle_colors(int keycode, t_data *data)
+{
+	if (keycode == XK_1)
+		data->fractal.color1 = DARK_BLUE;
+	if (keycode == XK_2)
+		data->fractal.color1 = PURPLE;
+	if (keycode == XK_3)
+		data->fractal.color1 = BLACK;
+	if (keycode == XK_4)
+		data->fractal.color1 = GREEN;
+	if (keycode == XK_5)
+		data->fractal.color1 = RED;
+	if (keycode == XK_6)
+		data->fractal.color2 = RED;
+	if (keycode == XK_7)
+		data->fractal.color2 = WHITE;
+	if (keycode == XK_8)
+		data->fractal.color2 = GREEN;
+	if (keycode == XK_9)
+		data->fractal.color2 = PURPLE;
+	if (keycode == XK_0)
+		data->fractal.color2 = DARK_BLUE;
 	if (keycode == XK_minus)
-		data->fractal.fractal_iterations += 5;
-	render_fractal(data);
+		data->fractal.color3 = 0;
+	if (keycode == XK_equal)
+		data->fractal.color3 = 1;
 	return (0);
 }
 
@@ -48,11 +87,14 @@ int	handle_mouse(int button, int x, int y, t_data *data)
 	if (button == 4)
 	{
 		data->fractal.zoom *= 0.95;
-		data->fractal.fractal_iterations += 2;
+		data->fractal.fractal_iterations += 1;
+		return (1);
 	}
 	else if (button == 5)
+	{
 		data->fractal.zoom *= 1.05;
-	render_fractal(data);
+		return (1);
+	}
 }
 
 int	close_program(t_data *data)
