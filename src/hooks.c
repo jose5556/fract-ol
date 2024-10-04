@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 11:54:18 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/03 18:23:52 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/04 14:38:19 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ int	hooks_listener(t_data *data)
 		close_program, data);
 	mlx_hook(data->win, ButtonPress, ButtonPressMask,
 		handle_mouse, data);
-	/* mlx_hook(data->win, MotionNotify, PointerMotionMask,
-		handle_g, data); */
 	return (0);
 }
 
@@ -84,18 +82,16 @@ int	handle_colors(int keycode, t_data *data)
 
 int	handle_mouse(int button, int x, int y, t_data *data)
 {
+	(void)	x;
+	(void)	y;
 	if (button == 4)
 	{
 		data->fractal.zoom *= 0.95;
 		data->fractal.fractal_iterations += 1;
-		return (1);
 	}
 	else if (button == 5)
-	{
 		data->fractal.zoom *= 1.05;
-		return (1);
-	}
-
+	return (0);
 }
 
 int	close_program(t_data *data)
@@ -105,5 +101,5 @@ int	close_program(t_data *data)
 	mlx_destroy_display(data->mlx);
 	free(data->mlx);
 	exit (EXIT_SUCCESS);
-	return (1);
+	return (0);
 }
