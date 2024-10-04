@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 08:13:15 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/03 17:59:40 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/04 14:35:17 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,24 @@ double	linear_interpolation(double minAllowed, double maxAllowed,
 		+ minAllowed);
 }
 
-int	smooth_color_interpolation(int color1, int color2,
-	int i, int max_iterations)
+int smooth_color_interpolation(int color1, int color2, int i, int max_iterations)
 {
-	double	t;
-	int		r;
-	int		g;
-	int		b;
+    double t;
+    int r, g, b;
 
-	t = (double)i / max_iterations;
-	t = t * t * (3.0 - 2.0 * t);
-	r = ((color1 >> 16) & 0xFF) + ((color2 >> 16) & 0xFF
-			- (color1 >> 16) & 0xFF) * t;
-	g = ((color1 >> 8) & 0xFF) + ((color2 >> 8) & 0xFF
-			- (color1 >> 8) & 0xFF) * t;
-	b = (color1 & 0xFF) + (color2 & 0xFF - color1 & 0xFF) * t;
-	return ((r << 16) | (g << 8) | b);
+    t = (double)i / max_iterations;
+    t = t * t * (3.0 - 2.0 * t);
+
+    r = ((color1 >> 16) & 0xFF) + (((color2 >> 16) & 0xFF)
+		- ((color1 >> 16) & 0xFF)) * t;
+    g = ((color1 >> 8) & 0xFF) + (((color2 >> 8) & 0xFF)
+		- ((color1 >> 8) & 0xFF)) * t;
+    b = (color1 & 0xFF) + (((color2 & 0xFF)
+		- (color1 & 0xFF)) * t);
+
+    return ((r << 16) | (g << 8) | b);
 }
+
 
 t_complex	sum_complex(t_complex z1, t_complex z2)
 {
