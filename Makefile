@@ -6,7 +6,7 @@
 #    By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/28 15:24:17 by joseoliv          #+#    #+#              #
-#    Updated: 2024/10/04 14:35:28 by joseoliv         ###   ########.fr        #
+#    Updated: 2024/10/04 19:08:35 by joseoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ FT_PRINTF = $(FT_PRINTF_DIR)/libftprintf.a
 
 CFLAGS = -Wextra -Wall -Werror
 LDFLAGS = $(LIBFT) $(MINILIBX) -lX11 -lXext -lm
-SRCS = src/main.c src/init.c src/render.c src/math_utils.c src/hooks.c
+SRCS = src/main.c src/init.c src/render.c src/math_utils.c src/hooks.c \
+src/barnsley_fern.c src/math_utils2.c src/main_utils.c
 OBJS = $(SRCS:.c=.o)
 NAME = process
 
