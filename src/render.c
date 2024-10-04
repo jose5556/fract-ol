@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 07:47:35 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/03 17:59:29 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/04 14:30:50 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int	handle_color(t_fractal *fractal, int color, int i)
 		color = linear_interpolation(fractal->color1,
 				fractal->color2, i,
 				fractal->fractal_iterations);
+	return (color);
 }
 
 void	handel_pixel(int x, int y, t_data *data)
@@ -46,6 +47,7 @@ void	handel_pixel(int x, int y, t_data *data)
 	int			color;
 
 	i = 0;
+	color = 0;
 	a.x = (linear_interpolation(-2, 2, x, WIDTH) * data->fractal.zoom)
 		+ data->fractal.shift_x;
 	a.y = (linear_interpolation(2, -2, y, HEIGHT) * data->fractal.zoom)
