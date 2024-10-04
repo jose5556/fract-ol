@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 15:38:03 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/04 14:27:58 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/04 19:07:23 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 
 # define HEIGHT	800
 # define WIDTH	800
+# define FERN_ITERATIONS 200000
 # define ERROR_MESSAGE "Wrong name or wrong format, please enter the \
 						name of your desired fractal first. \
 						If it is the julia set you want, don't forget to \
@@ -42,6 +43,11 @@ typedef struct s_img
 	int		line_length;
 	int		endian;
 }	t_img;
+typedef struct s_fern
+{
+	int				is_fern;
+	unsigned long	seed;
+}	t_fern;
 typedef struct s_fractal
 {
 	double	hypotenuse;
@@ -54,6 +60,7 @@ typedef struct s_fractal
 	int		color1;
 	int		color2;
 	int		color3;
+	t_fern	fern;
 	t_list	lst;
 }	t_fractal;
 typedef struct s_complex
@@ -88,5 +95,9 @@ int			handle_colors(int keycode, t_data *data);
 void		populate_color_lst(t_fractal *fractal);
 int			smooth_color_interpolation(int color1, int color2,
 				int i, int max_iterations);
+double		lcg_random(t_fern *fern);
+void		render_fern(t_data *data);
+void		mandelbrot_julia_handler(t_data *data, char *name);
+void		fern_handler(t_data *data);
 
 #endif
