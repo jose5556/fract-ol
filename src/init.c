@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 07:10:11 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/03 17:34:01 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/04 14:28:01 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	populate_color_lst(t_fractal *fractal)
 	fractal->lst.next = n1;
 	n1->content = WHITE;
 	n1->next = n2;
-	n2->content = RED;
+	n2->content = GREEN;
 	n2->next = n3;
 	n3->content = PURPLE;
 	n3->next = n4;
