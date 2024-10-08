@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 07:10:11 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/04 18:32:41 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/08 06:07:23 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	populate_color_lst(t_fractal *fractal)
 	fractal->lst.next = n1;
 	n1->content = WHITE;
 	n1->next = n2;
-	n2->content = GREEN;
+	n2->content = DARK_GREEN;
 	n2->next = n3;
 	n3->content = PURPLE;
 	n3->next = n4;
@@ -70,6 +70,5 @@ void	fractal_init(t_data *data)
 	}
 	data->img.addr = mlx_get_data_addr(data->img.img, &data->img.bits_per_pixel,
 			&data->img.line_length, &data->img.endian);
-	if (!data->fractal.fern.is_fern)
-		data_init(&data->fractal);
+	data_init(&data->fractal);
 }
