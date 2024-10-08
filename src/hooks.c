@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 11:54:18 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/04 14:38:19 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/08 06:05:01 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ int	hooks_listener(t_data *data)
 
 int	handle_keys(int keycode, t_data *data)
 {
+	int	i;
+
+	i = 0;
 	if (keycode == XK_Escape)
 		close_program(data);
 	if (keycode == XK_Left)
@@ -60,7 +63,7 @@ int	handle_colors(int keycode, t_data *data)
 	if (keycode == XK_3)
 		data->fractal.color1 = BLACK;
 	if (keycode == XK_4)
-		data->fractal.color1 = GREEN;
+		data->fractal.color1 = DARK_GREEN;
 	if (keycode == XK_5)
 		data->fractal.color1 = RED;
 	if (keycode == XK_6)
@@ -68,7 +71,7 @@ int	handle_colors(int keycode, t_data *data)
 	if (keycode == XK_7)
 		data->fractal.color2 = WHITE;
 	if (keycode == XK_8)
-		data->fractal.color2 = GREEN;
+		data->fractal.color2 = DARK_GREEN;
 	if (keycode == XK_9)
 		data->fractal.color2 = PURPLE;
 	if (keycode == XK_0)
@@ -92,6 +95,14 @@ int	handle_mouse(int button, int x, int y, t_data *data)
 	else if (button == 5)
 		data->fractal.zoom *= 1.05;
 	return (0);
+}
+
+void	delete(void *c)
+{
+	char *s;
+
+	s = (char *)c;
+	free(s);
 }
 
 int	close_program(t_data *data)
