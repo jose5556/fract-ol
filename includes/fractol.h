@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 15:38:03 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/08 06:05:31 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/08 06:28:59 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,5 +116,6 @@ void		chose_color(int i, t_fern *fern);
 int			hooks_listener_bonus(t_data *data);
 int			handle_keys_bonus(int keycode, t_data *data);
 void		delete(void *c);
+void		free_list(t_list *head);
 
 #endif
