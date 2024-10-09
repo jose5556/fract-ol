@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 07:10:11 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/09 02:09:40 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/09 03:14:48 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,35 +27,14 @@ static void	data_init(t_fractal *fractal)
 
 void	populate_color_lst(t_fractal *fractal)
 {
-	t_list	*n1;
-	t_list	*n2;
-	t_list	*n3;
-	t_list	*n4;
+	t_list	*colorlst;
 
-	n1 = (t_list *)ft_calloc(1, sizeof(t_list));
-	n2 = (t_list *)ft_calloc(1, sizeof(t_list));
-	n3 = (t_list *)ft_calloc(1, sizeof(t_list));
-	n4 = (t_list *)ft_calloc(1, sizeof(t_list));
-	fractal->lst.content = BLACK;
-	fractal->lst.next = n1;
-	n1->content = WHITE;
-	n1->next = n2;
-	n2->content = DARK_GREEN;
-	n2->next = n3;
-	n3->content = PURPLE;
-	n3->next = n4;
-	n4->content = DARK_BLUE;
-	n4->next = NULL;
-}
-
-t_list	*circular_lst(int content)
-{
-	t_list	*temp;
-
-	temp = malloc(sizeof(t_list));
-	temp->content = content;
-	temp->next = temp;
-	return (temp);
+	colorlst = ft_newlst(BLACK);
+	ft_lstadd_back(&colorlst, WHITE);
+	ft_lstadd_back(&colorlst, DARK_GREEN);
+	ft_lstadd_back(&colorlst, PURPLE);
+	ft_lstadd_back(&colorlst, DARK_BLUE);
+	fractal->lst = colorlst;
 }
 
 void	fractal_init(t_data *data)
