@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 15:38:03 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/09 03:13:18 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/09 05:27:52 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 
 # define HEIGHT	800
 # define WIDTH	800
-# define FERN_ITERATIONS 200000
+# define FERN_ITERATIONS 300000
 # define ERROR_MESSAGE "Wrong name or wrong format, please enter the \
 						name of your desired fractal first. \
 						If it is the julia set you want, don't forget to \
@@ -65,6 +65,8 @@ typedef struct s_fern
 	int				color;
 	int				swap_color;
 	int				first_iteration;
+	int				px;
+	int				py;
 }	t_fern;
 typedef struct s_fractal
 {
@@ -124,5 +126,6 @@ int			handle_keys_bonus(int keycode, t_data *data);
 t_list		*ft_newlst(int content);
 void		ft_lstadd_back(t_list **lst, int content);
 void		ft_lstclear(t_list **lst);
+t_complex	chose_leaf(t_complex a, t_complex b, int i);
 
 #endif
