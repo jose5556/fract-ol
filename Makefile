@@ -6,7 +6,7 @@
 #    By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/28 15:24:17 by joseoliv          #+#    #+#              #
-#    Updated: 2024/10/09 03:34:57 by joseoliv         ###   ########.fr        #
+#    Updated: 2024/10/09 05:37:06 by joseoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,8 @@ CFLAGS = -Wextra -Wall -Werror
 LDFLAGS = $(LIBFT) $(MINILIBX) -lX11 -lXext -lm
 SRCS =	src/main.c src/fractol_init/init.c src/helper_funcs/math_utils.c src/events/hooks.c \
 		src/fractol_render/render_fern.c src/helper_funcs/math_utils2.c src/main_helper.c \
-		src/events/hooks_bonus.c src/fractol_render/render_mandel_julia.c src/helper_funcs/list_utils.c
+		src/events/hooks_bonus.c src/fractol_render/render_mandel_julia.c \
+		src/helper_funcs/list_utils.c src/events/hook_exit.c
 OBJS = $(SRCS:.c=.o)
 NAME = fractol
 
