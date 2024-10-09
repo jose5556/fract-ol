@@ -6,11 +6,11 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 08:13:15 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/04 14:35:17 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/09 02:10:07 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fractol.h"
+#include "../../includes/fractol.h"
 
 double	linear_interpolation(double minAllowed, double maxAllowed,
 	double unscaledNum, double max)

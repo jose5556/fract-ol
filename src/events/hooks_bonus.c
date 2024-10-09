@@ -6,11 +6,11 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 01:52:12 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/08 04:11:08 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/09 02:09:25 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fractol.h"
+#include "../../includes/fractol.h"
 
 int	hooks_listener_bonus(t_data *data)
 {

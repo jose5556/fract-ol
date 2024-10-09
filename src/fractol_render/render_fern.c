@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   barnsley_fern.c                                    :+:      :+:    :+:   */
+/*   render_fern.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 15:52:48 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/09 01:58:37 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/09 02:09:48 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fractol.h"
+#include "../../includes/fractol.h"
 
 int	render_fern(t_data *data) 
 {

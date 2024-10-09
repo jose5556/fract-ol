@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   render.c                                           :+:      :+:    :+:   */
+/*   render_mandel_julia.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 07:47:35 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/04 17:39:30 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/09 02:09:53 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fractol.h"
+#include "../../includes/fractol.h"
 
 void	julia_mandelbrot(t_complex *a, t_complex *b, t_data *data)
 {

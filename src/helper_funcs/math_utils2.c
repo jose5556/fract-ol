@@ -6,11 +6,11 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 15:15:47 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/04 18:41:09 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/09 02:10:11 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fractol.h"
+#include "../../includes/fractol.h"
 
 double	lcg_random(t_fern *fern) 
 {
