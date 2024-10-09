@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 02:09:01 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/09 06:12:12 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/09 17:29:35 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ void	ft_lstclear(t_list **lst)
 	t_list	*temp;
 	t_list	*next_node;
 
-	temp = *lst;
 	if (!(*lst))
 		return ;
+	temp = *lst;
 	while (temp->next != *lst)
 		temp = temp->next;
 	temp->next = NULL;
