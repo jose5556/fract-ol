@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 07:47:35 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/09 02:09:53 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/09 03:17:01 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	handel_pixel(int x, int y, t_data *data)
 			return ;
 		}
 	}
-	my_mlx_pixel_put(&data->img, x, y, data->fractal.lst.content);
+	my_mlx_pixel_put(&data->img, x, y, data->fractal.lst->content);
 }
 
 int	render_fractal(void *param)
