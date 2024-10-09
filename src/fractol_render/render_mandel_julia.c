@@ -6,13 +6,13 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 07:47:35 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/09 03:17:01 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/09 05:50:17 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/fractol.h"
 
-void	julia_mandelbrot(t_complex *a, t_complex *b, t_data *data)
+static void	julia_mandelbrot(t_complex *a, t_complex *b, t_data *data)
 {
 	if (!ft_strncmp(data->name, "julia", 5))
 	{
@@ -26,7 +26,7 @@ void	julia_mandelbrot(t_complex *a, t_complex *b, t_data *data)
 	}
 }
 
-int	handle_color(t_fractal *fractal, int color, int i)
+static int	handle_color(t_fractal *fractal, int color, int i)
 {
 	if (fractal->color3)
 		color = smooth_color_interpolation(fractal->color1,
@@ -39,7 +39,7 @@ int	handle_color(t_fractal *fractal, int color, int i)
 	return (color);
 }
 
-void	handel_pixel(int x, int y, t_data *data)
+static void	handel_pixel(int x, int y, t_data *data)
 {
 	t_complex	a;
 	t_complex	b;
@@ -82,13 +82,4 @@ int	render_fractal(void *param)
 	}
 	mlx_put_image_to_window(data->mlx, data->win, data->img.img, 0, 0);
 	return (1);
-}
-
-void	my_mlx_pixel_put(t_img *vars, int x, int y, int color)
-{
-	char	*dst;
-
-	dst = vars->addr + (y * vars->line_length + x
-			* (vars->bits_per_pixel / 8));
-	*(unsigned int *)dst = color;
 }
