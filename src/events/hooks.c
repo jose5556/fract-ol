@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 11:54:18 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/09 03:36:44 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/09 05:36:20 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,16 +86,5 @@ int	handle_mouse(int button, int x, int y, t_data *data)
 	}
 	else if (button == 5)
 		data->fractal.zoom *= 1.05;
-	return (0);
-}
-
-int	close_program(t_data *data)
-{
-	mlx_destroy_image(data->mlx, data->img.img);
-	mlx_destroy_window(data->mlx, data->win);
-	mlx_destroy_display(data->mlx);
-	free(data->mlx);
-	ft_lstclear(&data->fractal.lst);
-	exit (EXIT_SUCCESS);
 	return (0);
 }
