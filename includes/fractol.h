@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 15:38:03 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/09 05:51:36 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/09 17:36:22 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@
 # define ELECTRIC_VIOLET	0xB000FF
 # define LIME_GREEN			0x7FFF00
 
-typedef	struct s_list
+typedef struct s_list
 {
 	int				content;
 	struct s_list	*next;
