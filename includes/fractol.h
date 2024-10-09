@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 15:38:03 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/09 01:57:42 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/09 03:13:18 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ typedef struct s_fractal
 	int		color1;
 	int		color2;
 	int		color3;
-	t_list	lst;
+	t_list	*lst;
 	t_fern	fern;
 }	t_fractal;
 typedef struct s_complex
@@ -121,7 +121,8 @@ t_complex	handle_random(double random, t_complex a, t_complex b, t_data *data);
 void		chose_color(int i, t_fern *fern);
 int			hooks_listener_bonus(t_data *data);
 int			handle_keys_bonus(int keycode, t_data *data);
-void		delete(void *c);
-void		free_list(t_list *head);
+t_list		*ft_newlst(int content);
+void		ft_lstadd_back(t_list **lst, int content);
+void		ft_lstclear(t_list **lst);
 
 #endif
