@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 07:10:11 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/09 03:14:48 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/09 04:11:19 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ static void	data_init(t_fractal *fractal)
 	fractal->color1 = DARK_BLUE;
 	fractal->color2 = RED;
 	fractal->color3 = 1;
+	fractal->fern.seed = 3;
 	populate_color_lst(fractal);
 }
 

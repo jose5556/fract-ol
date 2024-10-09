@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 11:54:18 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/09 03:13:46 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/09 03:36:44 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,8 @@ int	handle_colors(int keycode, t_data *data)
 
 int	handle_mouse(int button, int x, int y, t_data *data)
 {
-	(void)	x;
-	(void)	y;
+	(void) x;
+	(void) y;
 	if (button == 4)
 	{
 		data->fractal.zoom *= 0.95;
