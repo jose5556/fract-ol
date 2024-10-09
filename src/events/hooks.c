@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 11:54:18 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/09 06:32:02 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/09 17:24:20 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int	handle_mouse(int button, int x, int y, t_data *data)
 	if (button == 4)
 	{
 		data->fractal.zoom *= 0.95;
-		data->fractal.fractal_iterations += 1;
+		data->fractal.fractal_iterations += 2;
 	}
 	else if (button == 5)
 		data->fractal.zoom *= 1.05;
