@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 15:52:48 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/09 06:25:59 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/09 17:37:24 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,8 @@ static t_complex	chose_leaf(t_complex a, t_complex b, int i)
 	return (b);
 }
 
-static t_complex	handle_random(double random, t_complex a, t_complex b, t_data *data)
+static t_complex	handle_random(double random, t_complex a,
+	t_complex b, t_data *data)
 {
 	int	i;
 
