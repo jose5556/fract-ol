@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 15:38:03 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/09 17:36:22 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/09 17:42:02 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,10 @@
 # define WIDTH	800
 # define FERN_ITERATIONS 300000
 # define ERROR_MESSAGE "Wrong name or wrong format, please enter the \
-						name of your desired fractal first. \
-						If it is the julia set you want, don't forget to \
-						include their respective x and y coordinates.\n"
+name of your desired fractal first. \
+If it is the julia set you want, don't forget to \
+include their respective x and y coordinates.\n"
+
 # define BLACK				0x000000
 # define WHITE				0xFFFFFF
 # define RED				0xFF0000
