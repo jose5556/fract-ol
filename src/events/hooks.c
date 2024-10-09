@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 11:54:18 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/09 02:09:34 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/09 03:13:46 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,7 @@ int	handle_keys(int keycode, t_data *data)
 	if (keycode == XK_KP_Subtract)
 		data->fractal.fractal_iterations -= 5;
 	if (keycode == XK_space)
-	{
-		if (data->fractal.lst.next != NULL)
-			data->fractal.lst = *(data->fractal.lst.next);
-		else
-			populate_color_lst(&data->fractal);
-	}
+		data->fractal.lst = data->fractal.lst->next;
 	return (0);
 }
 
@@ -94,34 +89,13 @@ int	handle_mouse(int button, int x, int y, t_data *data)
 	return (0);
 }
 
-void	delete(void *c)
-{
-	char *s;
-
-	s = (char *)c;
-	free(s);
-}
-
 int	close_program(t_data *data)
 {
 	mlx_destroy_image(data->mlx, data->img.img);
 	mlx_destroy_window(data->mlx, data->win);
 	mlx_destroy_display(data->mlx);
 	free(data->mlx);
-	free_list(data->fractal.lst.next);
-	data->fractal.lst.next = NULL;
+	ft_lstclear(&data->fractal.lst);
 	exit (EXIT_SUCCESS);
 	return (0);
-}
-
-void free_list(t_list *head)
-{
-    t_list *temp;
-
-    while (head != NULL)
-    {
-        temp = head;
-        head = head->next;
-        free(temp);
-    }
 }
