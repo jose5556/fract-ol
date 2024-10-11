@@ -1,5 +1,5 @@
 <h1 align="center"> 
-    🌀 fract-ol 
+    🌀 Fract-ol 
 </h1> 
 
 <p align="center"> 
