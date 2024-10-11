@@ -23,10 +23,10 @@ The fractals are displayed in an interactive window, where users can navigate wi
 
 ### Some Key Features
 
-    Real-time zoom using mouse whell
+    Zoom using mouse whell
     Multiple fractal types
     Adjustable iterations for more detail
-    100% customizable color schemes for psychedelic effects
+    100% customizable color schemes
 
 For more detailed implementation information, see the project subject that is among the uploaded files.
 
@@ -67,7 +67,6 @@ Examples of fractal names available to be presented on the program:
 $ ./fractol mandelbrot
 ```
 Note that if you chose the julia set to be displayed, you must explicitly put in the desired arguments (x and y coordinates) that you want in order to see the exact julia set you have in mind.
-See more julia types sets [here]([https://example.com](https://pt.wikipedia.org/wiki/Conjunto_de_Julia)).
 
 ```shell
 $ ./fractol julia -0.835 -0.2321
@@ -78,7 +77,7 @@ This will open a window displaying the fractal on the argument. You can interact
 
     <h4> -> Mouse wheel for a real time and infinity zoom (zoom in, and zoom out); </h4>
     <h4> -> Keybord numbers (0 till 9) and space bar to customize the exact collors you want; </h4>
-    <h4> -> Try pressing the minos buttom ("-") to see some crazy stuff happening with the collors, press the equal buttom ("=") to come back to normal; </h4>
+    <h4> -> Try pressing the minos ("-") button to see some madness happening with the colors, press the equals button ("=")   to return to normal; </h4>
     <h4> -> Plus buttom ("+") to add more iterarions and see a more clear image. </h4>
 
 
