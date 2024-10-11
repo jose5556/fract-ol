@@ -12,7 +12,7 @@
 # 💡 About the project
 
 Fract-ol is a project completed during my studies at School 42. 
-The goal of this project is to explore and render various types of fractals using a graphical library (MiniLibX) provided by school 42. 
+The goal of this project is to explore and render various types of fractals using a graphical library (MiniLibX). 
 The program allows for real-time interaction with fractals, including zooming, shifting, and customizing color schemes.
 
 # 🔍 Overview
@@ -24,7 +24,7 @@ The fractals are displayed in an interactive window, where users can navigate wi
 ### Some Key Features
 
     Real-time zoom using mouse whell
-    Multiple fractal types and color schemes 100% customized
+    Multiple fractal types
     Adjustable iterations for more detail
     100% customizable color schemes for psychedelic effects
 
@@ -34,7 +34,7 @@ For more detailed implementation information, see the project subject that is am
 
 ### Requirements
 
-The project is written in C and requires the cc compiler. The program uses the MiniLibX graphical library to handle the window, rendering, and user inputs.
+The project is written in C and requires the cc compiler.
 
 ### Instructions
 
@@ -67,6 +67,7 @@ Examples of fractal names available to be presented on the program:
 $ ./fractol mandelbrot
 ```
 Note that if you chose the julia set to be displayed, you must explicitly put in the desired arguments (x and y coordinates) that you want in order to see the exact julia set you have in mind.
+See more julia types sets [here]([https://example.com](https://pt.wikipedia.org/wiki/Conjunto_de_Julia)).
 
 ```shell
 $ ./fractol julia -0.835 -0.2321
