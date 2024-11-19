@@ -17,6 +17,11 @@ The program allows for real-time interaction with fractals, including zooming, s
 
 # 🔍 Overview
 
+![Screenshot of the Project](assets/mandelbrot_1.png)
+![Screenshot of the Project](assets/mandelbrot_2.png)
+![Screenshot of the Project](assets/julia.png)
+
+
 This project implements the rendering of mathematical fractals such as the Mandelbrot set, Julia set and the Barnsley Fern. 
 It allows for smooth zooming and color transitions, offering users the ability to explore the depth of fractal patterns. 
 The fractals are displayed in an interactive window, where users can navigate with keyboard and mouse inputs.
