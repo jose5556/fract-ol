@@ -3,10 +3,10 @@
 </h1> 
 
 <p align="center"> 
-  <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/jose5556/fract-ol?color=lightblue" /> 
-  <img alt="Code language count" src="https://img.shields.io/github/languages/count/jose5556/fract-ol?color=yellow" /> 
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/jose5556/fract-ol?color=blue" /> 
-  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/jose5556/fract-ol?color=green" /> 
+  <img alt="Code bytes" src="https://img.shields.io/github/languages/code-size/jose5556/fract-ol?color=lightblue" /> 
+  <img alt="Code language" src="https://img.shields.io/github/languages/count/jose5556/fract-ol?color=yellow" /> 
+  <img alt="Top language" src="https://img.shields.io/github/languages/top/jose5556/fract-ol?color=blue" /> 
+  <img alt="Last commit" src="https://img.shields.io/github/last-commit/jose5556/fract-ol?color=green" /> 
 </p>
 
 # 💡 About the project
