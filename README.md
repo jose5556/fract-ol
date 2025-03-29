@@ -33,8 +33,6 @@ The fractals are displayed in an interactive window, where users can navigate wi
     Adjustable iterations for more detail
     100% customizable color schemes
 
-For more detailed implementation information, see the project subject that is among the uploaded files.
-
 # 🛠️ Usage
 
 ### Requirements
@@ -88,6 +86,6 @@ This will open a window displaying the fractal on the argument. You can interact
 
 # 📌 Note
 
-<h4> Make sure you have the necessary MiniLibX library installed. </h4>
-<h4> Barnsley Fern is a probability fractal, so you cant zoom in. </h4>
-<h4> The project supports multiple fractal types, each with crazy and unique characteristics. Experiment with different settings to discover fascinating fractal details! </h4>
+- Make sure you have the necessary MiniLibX library installed.
+- Barnsley Fern is a probability fractal, so you cant zoom in.
+- The project supports multiple fractal types, each with crazy and unique characteristics. Experiment with different settings to discover fascinating fractal details!
