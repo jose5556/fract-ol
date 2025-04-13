@@ -46,7 +46,6 @@ The project is written in C and requires the cc compiler.
 To compile the fractal viewer, run the following command in the project directory:
 
 ```shell
-
 $ make
 ```
 
