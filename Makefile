@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+         #
+#    By: cereais <cereais@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/28 15:24:17 by joseoliv          #+#    #+#              #
-#    Updated: 2024/10/09 05:37:06 by joseoliv         ###   ########.fr        #
+#    Updated: 2025/04/16 15:02:32 by cereais          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,14 +35,19 @@ all: $(NAME)
 $(NAME): $(OBJS) $(LIBFT) $(MINILIBX)
 	@$(CC) -o $@ $(OBJS) $(LDFLAGS)
 
-%.o: %.c
+%.o: %.c | $(MINILIBX)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(LIBFT):
 	@make -C $(LIBFT_DIR) -s
 
 $(MINILIBX):
-	@make -C $(MINILIBX_DIR) -s
+	@if [ ! -d "$(MINILIBX_DIR)" ]; then \
+		echo "MiniLibX not found, cloning..."; \
+		git clone https://github.com/42Paris/minilibx-linux.git $(MINILIBX_DIR); \
+	fi
+	@make -C $(MINILIBX_DIR) || true
+	@test -f $(MINILIBX) || (echo "MiniLibX build failed!" && exit 1)
 
 clean:
 	@rm -f $(OBJS)
